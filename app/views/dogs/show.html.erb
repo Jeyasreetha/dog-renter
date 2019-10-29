@@ -1,0 +1,9 @@
+<h1><%= @dog.name %></h1>
+<li>Age: <%= @dog.age %></li>
+<li>Breed: <%= @dog.breed %></li>
+<li>Price: <%= @dog.price %></li>
+<li>Location: <%= @dog.location %></li>
+<li>Owner: <%= @dog.user %></li>
+
+<%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
+
