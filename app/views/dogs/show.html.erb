@@ -6,4 +6,4 @@
 <li>Owner: <%= @dog.user %></li>
 
 <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
-
+<%= link_to "Delete this Dog", (@dog.destroy), class: "btn btn-primary" %>
