@@ -5,3 +5,32 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# (order matters according to association) renting belong to a dog
+Renting.destroy_all
+# a dog belongs to a user
+Dog.destroy_all
+User.destroy_all
+
+puts 'Creating 10 fake users and dogs'
+10.times do
+   user = User.new(
+    name: Faker::Name.unique.name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+   )
+   user.save!
+# puts 'Now creating 10 fake dogs'
+    dog = Dog.new(
+    user: user,
+    name: Faker::Dessert.flavor,
+    age: Faker::Number.within(range: 1..10),
+    breed: Faker::Food.fruits,
+    price: Faker::Number.within(range: 5..100),
+    location: "#{Faker::Address.street_address}, #{Faker::Address.city}"
+  )
+  dog.save!
+end
+puts 'Finished creating 10 fake users and dogs'
+
+
