@@ -1,11 +1,30 @@
-<div class="banner" style="background-image: url(https://media.mnn.com/assets/images/2018/05/puppies_dog_bed.jpg.653x0_q80_crop-smart.jpg);">
-  <div class="container">
-
-<h1>All dogs</h1>
-  <%= link_to "Add a Dog", new_dog_path, class: "btn btn-primary" %>
-  <%= link_to "Rent a Dog", class: "btn btn-primary" %>
-
+<body>
+  <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1525253086316-d0c936c814f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
+    <div class="container">
+      <h1>Doggo</h1>
+      <%= link_to "Add a Dog", new_dog_path, class: "btn btn-primary" %>
+      <%= link_to "Rent a Dog", class: "btn btn-primary" %>
+      <p></p>
+        </div>
+      <div class="container">
+        </div>
+    </div>
   </div>
+
+    <h1>All dogs</h1>
+  <ul>
+    <% @dogs.each do |dog| %>
+    <div class="card-product">
+     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+      <div class="card-product-infos">
+        <h2>Product name</h2>
+        <p>Product description with <strong>relevant info</strong> only.</p>
+      </div>
+    </div>
+      <li> Name: <%= dog.name %>, Age: <%= dog.age %></li>
+    <% end %>
+  <ul>
+</body>
 </div>
 
 <ul>
