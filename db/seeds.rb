@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+# (order matters according to association) renting belong to a dog
 Renting.destroy_all
+# a dog belongs to a user
 Dog.destroy_all
 User.destroy_all
 
