@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+Renting.destroy_all
+Dog.destroy_all
+User.destroy_all
 
 puts 'Creating 10 fake users and dogs'
 10.times do
@@ -24,6 +27,7 @@ puts 'Creating 10 fake users and dogs'
     price: Faker::Number.within(range: 5..100),
     location: "#{Faker::Address.street_address}, #{Faker::Address.city}"
   )
+  dog.save!
 end
 puts 'Finished creating 10 fake users and dogs'
 
