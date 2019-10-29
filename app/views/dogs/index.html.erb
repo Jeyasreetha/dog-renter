@@ -25,3 +25,10 @@
     <% end %>
   <ul>
 </body>
+</div>
+
+<ul>
+  <% @dogs.each do |dog| %>
+  <li> Name: <%= dog.name %>, Age: <%= dog.age %></li>
+  <% end %>
+<ul>
