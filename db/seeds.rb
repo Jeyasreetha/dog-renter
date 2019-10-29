@@ -5,5 +5,26 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-10.times
+
+
+puts 'Creating 10 fake users and dogs'
+10.times do
+   user = User.new(
+    name: Faker::Name.unique.name,
+    email: Faker::Internet.email,
+    password: Faker::Internet.password
+   )
+   user.save!
+# puts 'Now creating 10 fake dogs'
+    dog = Dog.new(
+    user: user,
+    name: Faker::Dessert.flavor,
+    age: Faker::Number.within(range: 1..10),
+    breed: Faker::Food.fruits,
+    price: Faker::Number.within(range: 5..100),
+    location: "#{Faker::Address.street_address}, #{Faker::Address.city}"
+  )
+end
+puts 'Finished creating 10 fake users and dogs'
+
 
