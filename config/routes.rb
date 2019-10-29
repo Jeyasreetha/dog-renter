@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # ?????
   devise_for :users
   # localhost3000/
   root to: 'dogs#index'
