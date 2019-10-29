@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rentings/create'
   devise_for :users
   # localhost3000/
   root to: 'dogs#index'

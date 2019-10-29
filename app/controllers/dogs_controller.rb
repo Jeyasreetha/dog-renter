@@ -9,6 +9,7 @@ class DogsController < ApplicationController
   def show
     # Read one dog
     # @dog = Dog.find(params[:id])
+    @renting = Renting.new
   end
 
   def new
