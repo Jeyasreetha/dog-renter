@@ -12,9 +12,9 @@ class DogsController < ApplicationController
   def show
     # Read one dog
     # @dog = Dog.find(params[:id])
-
     # call the dog_policy method show
     authorize @dog
+    @renting = Renting.new
   end
 
   def new
