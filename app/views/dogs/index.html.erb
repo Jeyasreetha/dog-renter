@@ -1,0 +1,17 @@
+<div class="banner" style="background-image: url(https://media.mnn.com/assets/images/2018/05/puppies_dog_bed.jpg.653x0_q80_crop-smart.jpg);">
+  <div class="container">
+
+<h1>All dogs</h1>
+  <%= link_to "Add a Dog", new_dog_path, class: "btn btn-primary" %>
+  <%= link_to "Rent a Dog", class: "btn btn-primary" %>
+
+  </div>
+</div>
+
+<ul>
+  <% @dogs.each do |dog| %>
+  <li> Name: <%= dog.name %>, Age: <%= dog.age %></li>
+  <% end %>
+<ul>
+
+
