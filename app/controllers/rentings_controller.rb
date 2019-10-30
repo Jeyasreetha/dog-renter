@@ -1,7 +1,9 @@
 class RentingsController < ApplicationController
   def create
+
     @renting = Renting.new(renting_params)
     @dog = Dog.find(params[:dog_id])
+    authorize @dog
     @renting.dog = @dog
     @renting.user = current_user
     @renting.total_price = (@renting.end - @renting.start) / 86_400 * @dog.price
