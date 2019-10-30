@@ -10,3 +10,18 @@
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+
+
+.navbar-light .navbar-brand {
+    color: rgba(0, 0, 0, 0.9);
+}
+
+.navbar-lewagon .navbar-collapse {
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+}

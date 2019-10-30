@@ -1,6 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to dogs_path, class: "navbar-brand" do %>
-    <%= image_tag "https://image.flaticon.com/icons/svg/53/53135.svg" %>
+    <%= image_tag "https://image.flaticon.com/icons/svg/181/181867.svg" %>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -14,8 +14,7 @@
         <%= link_to "Sign-up",  new_user_registration_path, class: "nav-link" %>
       </li>
       <li class="nav-item">
-        <%= link_to "delete", destroy_user_session_path, method: :delete  %>
-        <%= link_to "log-in", '/users/sign_in', class: "nav-link" %>
+        <%= link_to "log-in", user_session_path, class: "nav-link" %>
       </li>
       <li class="nav-item dropdown">
         <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
