@@ -22,7 +22,7 @@
 
           <!-- <div class="p-2 bd-highlight text-center"> -->
             <% if @user.image? %>
-              <%= image_tag @user.image, alt: "alttext", class: 'avatar-large dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+              <%= image_tag @user.image, alt: "alttext", class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
               <!-- <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"> -->
               <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
