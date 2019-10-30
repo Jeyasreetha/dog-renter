@@ -1,6 +1,6 @@
 .homepage-card {
   overflow: hidden;
-  height: 300px;
+  height: 475px;
   width: 400px;
   display: flex;
   flex-direction: column;
@@ -8,18 +8,33 @@
   // margin: 0 auto;
   margin-left: 0px;
   position: absolute;
-  top: 60px;
-  left: 250px;
+  top: 0px;
+  left: 210px;
   // display: inline-block;
 }
 
-.add-dog-button, .rent-dog-button {
-  font-size: 12px;
-  line-height: 1.4;
-  margin-bottom: 0;
-  margin-top: 8px;
-  justify-items: center;
-  text-align: center;
+.homepage-button {
+  background-color: #02edd2;
+  border-color: #02edd2;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border-radius: 4px;
+  text-shadow: 3px 2px 3px rgba(0,0,0,0.2);
+  box-shadow: 3px 2px 5px rgba(0,0,0,0.2);
+
+  a {
+    color: white;
+    font-size: 25px;
+    text-shadow: 3px 2px 3px rgba(0,0,0,0.2);
+  }
+}
+
+.btn-block {
+  height: 70px;
+  margin-top: 10px;
 }
 
 // .homepage-card h2 {
@@ -28,11 +43,3 @@
 //   text-align: center;
 // }
 
-.homepage-card p {
-  font-size: 12px;
-  line-height: 1.4;
-  margin-bottom: 0;
-  margin-top: 8px;
-  justify-items: center;
-  opacity: 1;
-}
