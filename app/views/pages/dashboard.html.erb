@@ -1,10 +1,9 @@
 <div class="container my-5">
   <div class="d-flex flex-column bd-highlight mb-2">
-        <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 80px;">
-        <div class="p-2 bd-highlight"><p> <i class="fas fa-paw"></i> <%= link_to "Add your dog", new_dog_path %></p></div>
-        <div class="p-2 bd-highlight"><p><%= link_to "Edit your profile", edit_user_registration_path %></p></div>
+    <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 80px;">
+    <div class="p-2 bd-highlight"><p> <i class="fas fa-paw"></i> <%= link_to "Add your dog", new_dog_path %></p></div>
+    <div class="p-2 bd-highlight"><p><%= link_to "Edit your profile", edit_user_registration_path %></p></div>
   </div>
-
   <div class="p-2 bd-highlight text-center">
     <img class="avatar-large" alt="avatar-large" src="https://olgadmitriewna.github.io/profile/images/profile-picture.jpg">
   </div>
@@ -12,27 +11,25 @@
     <h2 class="card-description text-center">Hello, I'm <%=@user.name%></h2>
   </div>
   <div class="p-2 bd-highlight">
-    <p class="card-description text-center">Joined in <%= @user.created_at.strftime("%Y") %> | From <%= @user.location%></p>
+    <p class="card-description text-center">Joined in <%= @user.created_at.strftime("%Y") %> | From <%= @user.location%></p>
   </div>
-
-  <div class="container my-5 bg-white p-3" >
-    <% if @user.description? %>
-    <%= @user.description %>
-    <% else %>
-      <p>Add a description by editing your profile. It should include a little bit about yourself and your experience with dogs - so users know you better.</p>
-    <% end %>
-  </div>
-
-  <div class="container my-5 bg-white p-3" >
-    <h3>My dogs</h3>
-
-  </div>
-
-
-  <div class="container my-5 bg-white p-3" >
-    <h3>Dogs you rented</h3>
-  </div>
-
-
-
+</div>
+<div class="container my-5 bg-white p-3" >
+  <% if @user.description? %>
+  <%= @user.description %>
+  <% else %>
+    <p>Add a description by editing your profile. It should include a little bit about yourself and your experience with dogs - so users know you better.</p>
+  <% end %>
+</div>
+<div class="container my-5 bg-white p-3">
+  <h3>My dogs</h3>
+</div>
+<div class="container my-5 bg-white p-3" >
+  <h3>Dogs you rented</h3>
+  <ul class="p-2 bd-highlight">
+  <% @rentings.each do |renting| %>
+  <li><%= renting.dog.name %></li>
+  <% end %>
+  </ul>
+</div>
 </div>
