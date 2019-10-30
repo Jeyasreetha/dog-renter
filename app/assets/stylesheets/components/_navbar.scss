@@ -19,3 +19,14 @@
   -webkit-box-flex: 0;
   flex-grow: 0;
 }
+
+.home-nav {
+  background-color: transparent;
+  margin-bottom: -58px;
+  padding-top: 0px;
+  z-index: 1;
+}
+
+.home-nav .nav-link {
+  color: white !important;
+}
