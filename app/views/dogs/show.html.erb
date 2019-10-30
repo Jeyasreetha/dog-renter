@@ -1,19 +1,27 @@
-<h1><%= @dog.name %></h1>
-<li>Age: <%= @dog.age %></li>
-<li>Breed: <%= @dog.breed %></li>
-<li>Price: <%= @dog.price %></li>
-<li>Location: <%= @dog.location %></li>
-<li>Owner: <%= @dog.user %></li>
+<div class = "container">
 
-<%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
-<%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
+<div class = "dog_card">
+  <%= image_tag "https://source.unsplash.com/collection/1270951/400x300"%>
+    <h1><%= @dog.name %></h1>
+      <li>Age: <%= @dog.age %></li>
+      <li>Breed: <%= @dog.breed %></li>
+      <li>Price: <%= @dog.price %></li>
+      <li>Location: <%= @dog.location %></li>
+      <li>Owner: <%= @dog.user.name %></li>
 
-<div>
-<%= link_to "Book this Dog", class: "btn btn-primary" %>
+      <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
+      <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
+</div>
+
+<div class = "rent_dog">
+
 <%= simple_form_for [@dog, @renting] do |f| %>
   <%= f.input :start %>
   <%= f.input :end %>
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <%= f.submit "Book this Dog", class: "btn btn-primary" %>
 <% end %>
+</div>
 
 </div>
+
+
