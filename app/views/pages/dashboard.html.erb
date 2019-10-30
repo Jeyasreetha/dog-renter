@@ -1,8 +1,7 @@
 <div class="container my-5">
   <div class="d-flex flex-column bd-highlight mb-2">
     <div class="d-flex align-items-end flex-column bd-highlight mb-3" style="height: 80px;">
-      <div class="p-2 bd-highlight"><p> <i class="fas fa-paw"></i> <%= link_to "Add your dog", new_dog_path %></p></div>
-      <div class="p-2 bd-highlight"><p><%= link_to "Edit your profile", edit_user_registration_path %></p></div>
+      <div class="p-2 bd-highlight"><p><%= link_to "Edit your profile", edit_user_registration_path, class: "btn btn-primary"%></p></div>
     </div>
     <div class="p-2 bd-highlight text-center">
       <% if @user.image? %>
@@ -27,10 +26,14 @@
     <% end %>
   </div>
   <div class="container my-5 bg-white p-3">
+     <div class="d-flex align-items-end flex-column bd-highlight" style="height: 10px;">
+        <div class="p-2 bd-highlight"><p> <%= link_to "Add your dog", new_dog_path, class: "btn btn-outline-secondary"  %></p></div>
+    </div>
     <h3>My dogs</h3>
+
     <ul class="p-2 bd-highlight">
       <% @dogs.each do |dog| %>
-      <li><%= dog.name %></li>
+      <li style="list-style-type:none"><i class="fas fa-paw"></i> <%= link_to dog.name, dog_path(dog) %></li>
       <% end %>
     </ul>
   </div>
@@ -39,7 +42,7 @@
     <h3>Dogs you rented</h3>
     <ul class="p-2 bd-highlight">
       <% @rentings.each do |renting| %>
-      <li><%= renting.dog.name %></li>
+      <li style="list-style-type:none"><i class="fas fa-paw"></i> <%= link_to dog.name, dog_path(dog) %></li>
       <% end %>
     </ul>
   </div>
