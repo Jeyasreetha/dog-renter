@@ -7,6 +7,7 @@ class DogsController < ApplicationController
   def index
     # Read all dogs
     @dogs = Dog.all
+    @user = current_user
   end
 
   def show
