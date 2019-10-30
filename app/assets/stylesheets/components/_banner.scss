@@ -1,20 +1,21 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 0;
   height: 700px;
   display: flex;
   align-items: flex-start;
+  position: relative;
 }
 
 .banner h1 {
   font-size: 50px;
   color: white;
-  width: 200px;
-  margin-left: 20px;
+  // width: 200px;
+  // margin-left: 20px;
   justify-content: left;
-  margin-left: 20%;
-  margin-bottom: 75%;
+  // margin-left: 20%;
+  // margin-top: 12%;
 }
 
 .banner p {
