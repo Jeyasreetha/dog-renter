@@ -15,9 +15,14 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <%= f.input :name,
+                hint: "type in your name",
+                required: true
+                %>
+
     <%= f.input :image,
                 hint: "add a link of an image of yourself",
-                required: false
+                required: true
                 %>
 
     <%= f.input :location,
