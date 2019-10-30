@@ -1,16 +1,21 @@
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 150px 0;
+  padding: 0;
+  height: 700px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
 }
 
 .banner h1 {
-  margin: 0;
+  font-size: 50px;
   color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-size: 32px;
-  font-weight: bold;
-  font-family: $headers-font;
+  // width: 200px;
+  // margin-left: 20px;
+  justify-content: left;
+  // margin-left: 20%;
+  // margin-top: 12%;
 }
 
 .banner p {
