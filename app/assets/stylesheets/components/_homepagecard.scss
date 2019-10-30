@@ -1,0 +1,33 @@
+.homepage-card {
+  overflow: hidden;
+  height: 250px;
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+  margin-left: 720px;
+  display: inline-block;
+  align-items: center;
+}
+
+.add-dog-button {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+  justify-items: center;
+}
+
+// .homepage-card h2 {
+//   font-size: 25px;
+//   margin-top: 10px;
+//   text-align: center;
+// }
+
+.homepage-card p {
+  font-size: 12px;
+  line-height: 1.4;
+  margin-bottom: 0;
+  margin-top: 8px;
+  justify-items: center;
+  opacity: 1;
+}

@@ -1,12 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1525253086316-d0c936c814f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
-    <div class="container">
       <h1>Doggo</h1>
-      <%= link_to "Add a Dog", new_dog_path, class: "btn btn-primary" %>
-      <%= link_to "Rent a Dog", "#all-dogs", class: "btn btn-primary" %>
-      <p></p>
-        </div>
-      <div class="container">
-        </div>
+    <div class="homepage-card">
+      <p class="add-dog-button"><%= link_to "Add a Dog", new_dog_path, class: "btn btn-primary" %></p>
+      <p class="rent-dog-button"><%= link_to "Rent a Dog", "#all-dogs", class: "btn btn-primary" %></p>
+      </div>
     </div>
   </div>
 
@@ -14,7 +11,7 @@
     <h1>All dogs</h1>
     <% @dogs.each do |dog| %>
     <div class="card-product">
-     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+     <img src="https://source.unsplash.com/collection/1270951/400x300">
       <div class="card-product-infos">
       <%= link_to dog.name, dog_path(dog) %>
         <p>Age: <%= dog.age %></p>
