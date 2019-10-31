@@ -8,6 +8,12 @@ class DogsController < ApplicationController
     # Read all dogs
     @dogs = Dog.all
     @user = current_user
+
+    if params[:query].present?
+      @dogs = Dog.where(breed: params[:query])
+    else
+      @dogs = Dog.all
+    end
   end
 
   def show
