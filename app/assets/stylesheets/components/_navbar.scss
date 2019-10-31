@@ -1,5 +1,6 @@
 .navbar-lewagon {
   justify-content: space-between;
+  background-color: white;
   // background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
 
@@ -28,5 +29,11 @@
 }
 
 .home-nav .nav-link {
-  color: white !important;
+  color: black !important;
+}
+
+.logo-name {
+    display: inline;
+    font-size: 20px;
+    align-content: center;
 }
