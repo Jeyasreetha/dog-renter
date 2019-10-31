@@ -1,6 +1,7 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
   <%= link_to dogs_path, class: "navbar-brand" do %>
     <%= image_tag "https://image.flaticon.com/icons/svg/181/181867.svg", class: "svg" %>
+    <p class="logo-name">PupHub</p>
   <% end %>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,7 +16,7 @@
           <%= link_to "Sign-up",  new_user_registration_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <%= link_to "log-in", user_session_path, class: "nav-link" %>
+          <%= link_to "Log-in", user_session_path, class: "nav-link" %>
         </li>
       <% else %>
         <li class="nav-item dropdown">
@@ -31,7 +32,7 @@
 
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
             <%= link_to "Logout", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-            <%= link_to "Another action", "#", class: "dropdown-item" %>
+            <%= link_to "See profile", dashboard_path, class: "dropdown-item" %>
           </div>
         </li>
       <% end %>

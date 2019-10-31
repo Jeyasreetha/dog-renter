@@ -1,13 +1,14 @@
 .card-product {
-  overflow: hidden;
-  height: 300px;
-  width: 350px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  margin: 0 auto;
-  display: inline-block;
-  align-items: center;
+    overflow: hidden;
+    height: 395px;
+    width: 457px;
+    background: white;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    display: inline-block;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    justify-content: center;
 }
 
 
