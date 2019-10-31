@@ -6,14 +6,49 @@ class DogsController < ApplicationController
 
   def index
     # Read all dogs
+
     @dogs = Dog.all
     @user = current_user
+    breed = params[:breed]
+    age = params[:age]
+    price = params[:price]
 
-    if params[:query].present?
-      @dogs = Dog.where(breed: params[:query])
+    if breed && age && price
+      @dogs = Dog.where(breed: breed, age: age, price: price)
+    elsif breed && age && !price
+      @dogs = Dog.where(age: age, breed: breed)
+    elsif breed && price && !age
+      @dogs = Dog.where(breed: breed,  price: price)
+    elsif price && age && !breed
+      @dogs = Dog.where(age: age, price: price)
+    elsif price
+      @dogs = Dog.where(price: price)
+    elsif breed
+      @dogs = Dog.where(breed: breed)
+    elsif age
+      @dogs = Dog.where(age: age)
     else
       @dogs = Dog.all
     end
+
+
+
+
+    # if params[:breed].present?
+    #   @dogs = Dog.where(breed: params[:breed])
+    # elsif params[:age].present?
+    #   @dogs = Dog.where(age: params[:age])
+    # elsif params[:price].present?
+    #   @dogs = Dog.where(price: params[:price])
+
+    # else
+    #   @dogs = Dog.all
+    # end
+
+
+
+
+
   end
 
   def show
@@ -42,7 +77,7 @@ class DogsController < ApplicationController
       # Go to the show page of the created dog
       redirect_to dog_path(@dog)
     else
-      #
+
       render 'new'
     end
   end
