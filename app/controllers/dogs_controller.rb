@@ -5,28 +5,37 @@ class DogsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   def index
     # Read all dogs
+    @max = Dog.all.sort_by { |d| d.price }.last.price
+    @min = Dog.all.sort_by { |d| d.price }.first.price
+
     @dogs = Dog.all
     @user = current_user
     breed = params[:breed]
     age = params[:age]
     price = params[:price]
+    location = params[:location]
     if breed && age && price
       @dogs = Dog.where(breed: breed, age: age, price: price)
     elsif breed && age && !price
       @dogs = Dog.where(age: age, breed: breed)
     elsif breed && price && !age
-      @dogs = Dog.where(breed: breed,  price: price)
+      @dogs = Dog.where(breed: breed, price: price)
     elsif price && age && !breed
       @dogs = Dog.where(age: age, price: price)
     elsif price
-      @dogs = Dog.where(price: price)
+
+    @dogs = Dog.where('price >= ? AND price <=?', @min, price)
+
     elsif breed
       @dogs = Dog.where(breed: breed)
     elsif age
       @dogs = Dog.where(age: age)
+    elsif location
+      @dogs = Dog.where("location ILIKE ?", "%#{location}%")
     else
       @dogs = Dog.all
     end
+
     # if params[:breed].present?
     #   @dogs = Dog.where(breed: params[:breed])
     # elsif params[:age].present?

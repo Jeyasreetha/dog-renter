@@ -9,10 +9,16 @@
     padding: 20px;
 }
 
+.search_tabs{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.tabs{
+  display: flex;
+  justify-content: space-between;
+ }
+
 .dog_card li {
   list-style-type: none;
 }
-
-// .dog_images{
-//   height: 200px;
-// }
