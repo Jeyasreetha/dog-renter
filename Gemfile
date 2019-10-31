@@ -16,6 +16,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master'
 gem 'pundit'
+gem 'dotenv-rails', groups: [:development, :test]
 
 gem 'devise'
 group :development do
