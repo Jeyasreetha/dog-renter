@@ -90,7 +90,7 @@ class DogsController < ApplicationController
   private
   def dog_params
     # white list
-    params.require(:dog).permit(:name, :age, :breed, :location, :price)
+    params.require(:dog).permit(:name, :age, :breed, :location, :price, :image)
   end
   def set_dog
     @dog = Dog.find(params[:id])

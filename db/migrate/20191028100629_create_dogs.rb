@@ -3,6 +3,7 @@ class CreateDogs < ActiveRecord::Migration[5.2]
     create_table :dogs do |t|
       t.string :name
       t.integer :age
+      t.string :image
       t.string :breed
       t.string :location
       t.integer :price

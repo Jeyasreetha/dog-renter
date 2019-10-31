@@ -1,8 +1,8 @@
 <div class = "container">
-
-<div class = "dog_card">
-  <%= image_tag "https://source.unsplash.com/collection/1270951/400x300"%>
+  <img class="img-fluid w-5" alt="Responsive image" src="<%= @dog.image %>" >
     <h1><%= @dog.name %></h1>
+  <div class = "dog_card">
+
       <li>Age: <%= @dog.age %></li>
       <li>Breed: <%= @dog.breed %></li>
       <li>Price: <%= @dog.price %></li>
