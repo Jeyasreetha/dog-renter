@@ -1,34 +1,38 @@
 <div class = "container mt-5">
-<%= cl_image_tag @dog.image.url, height: 300, fill: 'sample'  %>
-    <h1><%= @dog.name %></h1>
-  <div class = "dog_card">
 
-      <li>Age: <%= @dog.age %></li>
-      <li>Breed: <%= @dog.breed %></li>
-      <li>Price: <%= @dog.price %></li>
-      <li>Location: <%= @dog.location %></li>
-      <li>Owner: <%= @dog.user.name %></li>
+  <div class = "d-flex">
+    <div class = "dog_image">
+      <%= cl_image_tag @dog.image.url, height: 300, fill: 'sample'  %>
+    </div>
+      <div class = "dog_card">
+          <h1><%= @dog.name %></h1>
+          <li>Age: <%= @dog.age %></li>
+          <li>Breed: <%= @dog.breed %></li>
+          <li>Price: <%= @dog.price %></li>
+          <li>Location: <%= @dog.location %></li>
+          <li>Owner: <%= @dog.user.name %></li>
+          <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
+          <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
+      </div>
+  </div>
 
-      <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
-      <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
-</div>
+  <div id='dog-booking-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>">
+    <% if current_user.id != @dog.user_id  %>
+       <%= simple_form_for([@dog, @renting]) do |f| %>
+           <%= f.input :start, as: :string, type: :text %>
+           <%= f.input :end, as: :string, type: :text %>
+           <%= f.submit "Book", class: "btn btn-primary" %>
+        <% end %>
+    <% end %>
+ </div>
 
-<div class = "rent_dog">
-
-<%= simple_form_for [@dog, @renting] do |f| %>
-  <%= f.input :start %>
-  <%= f.input :end %>
-  <%= f.submit "Book this Dog", class: "btn btn-primary" %>
-<% end %>
-</div>
-
-
-<div
+  <h3>Map:</h3>
+  <div
   id="map"
   style="width: 100%;
-  height: 600px;"
+  height: 400px;"
   data-markers="<%= @markers.to_json %>"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-></div>
+  ></div>
 
 </div>
