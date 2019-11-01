@@ -11,8 +11,12 @@
           <li>Price: <%= @dog.price %></li>
           <li>Location: <%= @dog.location %></li>
           <li>Owner: <%= @dog.user.name %></li>
-          <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary show-buttons" %>
-          <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary show-buttons" %>
+        
+          <% if current_user == @dog.user %>
+          <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
+          <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
+          <% end %>
+
       </div>
   </div>
 

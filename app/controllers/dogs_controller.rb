@@ -87,6 +87,7 @@ class DogsController < ApplicationController
     authorize @dog
     # renders a form already with info to change
     # @dog = Dog.find(params[:id])
+
   end
 
   def update
