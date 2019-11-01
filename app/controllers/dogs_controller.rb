@@ -54,6 +54,19 @@ class DogsController < ApplicationController
     # call the dog_policy method show
     authorize @dog
     @renting = Renting.new
+
+    # returns flats with coordinates
+    @dogs = Dog.geocoded
+
+      @markers = @dogs.map do |dog|
+      {
+        lat: dog.latitude,
+        lng: dog.longitude,
+        infoWindow: render_to_string(partial: "location", locals: { dog: dog })
+
+      }
+      end
+
   end
 
   def new
