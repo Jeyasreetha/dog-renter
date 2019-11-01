@@ -74,6 +74,7 @@ class DogsController < ApplicationController
     authorize @dog
     # Need to be logged-in to add dog listing
     @dog.user = current_user
+    raise
     if @dog.save
       # Go to the show page of the created dog
       redirect_to dog_path(@dog)
@@ -114,7 +115,7 @@ class DogsController < ApplicationController
 
   def dog_params
     # white list
-    params.require(:dog).permit(:name, :age, :breed, :location, :price, :image)
+    params.require(:dog).permit(:name, :age, :breed, :location, :price, :image, :image_cache)
   end
 
   def set_dog
