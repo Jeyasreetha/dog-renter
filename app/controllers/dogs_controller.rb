@@ -74,7 +74,6 @@ class DogsController < ApplicationController
     authorize @dog
     # Need to be logged-in to add dog listing
     @dog.user = current_user
-    raise
     if @dog.save
       # Go to the show page of the created dog
       redirect_to dog_path(@dog)
