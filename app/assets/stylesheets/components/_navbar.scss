@@ -4,6 +4,18 @@
   // background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1));
 }
 
+.navbar-home {
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  background-color: transparent;
+  position: absolute;
+  z-index: 8;
+  width: 100%;
+  a{
+    color: white !important
+  }
+}
+
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
 }

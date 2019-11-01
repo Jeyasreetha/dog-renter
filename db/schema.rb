@@ -18,7 +18,6 @@ ActiveRecord::Schema.define(version: 2019_10_31_105257) do
   create_table "dogs", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.string "image"
     t.string "breed"
     t.string "location"
     t.integer "price"
