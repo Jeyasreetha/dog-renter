@@ -1,17 +1,17 @@
-<div class = "container mt-5">
+<div class = "container col-8 mt-5">
 
   <div class = "d-flex">
     <div class = "dog_image">
       <%= cl_image_tag @dog.image.url, height: 300, fill: 'sample'  %>
     </div>
-      <div class = "dog_card">
-          <h1><%= @dog.name %></h1>
+      <div class = "dog_card ml-5">
+          <h2><%= @dog.name %></h2>
           <li>Age: <%= @dog.age %></li>
           <li>Breed: <%= @dog.breed %></li>
           <li>Price: <%= @dog.price %></li>
           <li>Location: <%= @dog.location %></li>
           <li>Owner: <%= @dog.user.name %></li>
-        
+
           <% if current_user == @dog.user %>
           <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
           <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
@@ -19,7 +19,7 @@
 
       </div>
   </div>
-
+<h2 class="mt-5">Rent <%= @dog.name %></h2>
   <div id='dog-renting-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>">
     <% if user_signed_in? %>
       <% if current_user.id != @dog.user_id  %>
