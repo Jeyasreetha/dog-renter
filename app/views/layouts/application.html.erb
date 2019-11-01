@@ -10,17 +10,11 @@
   <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
 </head>
 <body>
-  <%# if params[:controller] == "dogs" && params[:action] == "index" %>
-  <%#= render 'shared/homenav' %>
-  <%# else %>
   <%= render 'shared/navbar' %>
+  <div class="overall-container">
+    <%= yield %>
+  </div>
 
-  <%# end %>
-  <%= yield %>
-  <%= javascript_include_tag 'application' %>
-  <%= javascript_pack_tag 'application' %>
-
-</body>
   <footer class="footer mt-50 py-7">
   <div class="footer">
     <div class="footer-links">
@@ -35,5 +29,8 @@
     </div>
   </div>
   </footer>
+  <%= javascript_include_tag 'application' %>
+  <%= javascript_pack_tag 'application' %>
+</body>
 </html>
 
