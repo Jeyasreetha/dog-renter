@@ -2,25 +2,25 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-
-          <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514984681892-8a5da9d7d6fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1977&q=80);">
-      <div class="homepage-card">
-        <h1 class="text-left">Craving a companion?</h1>
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514984681892-8a5da9d7d6fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1977&q=80);">
+        <div class="homepage-card">
+          <h1 class="text-left">Craving a companion?</h1>
           <%= link_to "Rent a Dog", "#all-dogs", class: "homepage-button align-item-left" %>
+        </div>
       </div>
-    </div>
-    <div class="carousel-item">
-    <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440484433300-c3317c44152e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2023&q=80);">
-      <div class="homepage-card">
-        <h1 class="text-left">Preocupied with your job and your pup is left home alone?</h1>
-        <div class="homepage-button align-item-left">
-         <%= link_to "Add a Dog", new_dog_path, class: "m-0"%>
+      </div>
+      <div class="carousel-item">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440484433300-c3317c44152e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2023&q=80);">
+          <div class="homepage-card">
+            <h1 class="text-left">Preocupied with your job and your pup is left home alone?</h1>
+            <div class="homepage-button align-item-left">
+             <%= link_to "Add a Dog", new_dog_path, class: "m-0"%>
+           </div>
+         </div>
        </div>
      </div>
    </div>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
@@ -41,14 +41,14 @@
     <% @dogs.each do |dog| %>
     <div class="card-product">
       <%= cl_image_tag dog.image.url, height: 300, width: 400, crop: :fill %>
-     <div class="card-product-infos">
-      <%= link_to dog.name, dog_path(dog) %>
-      <p>Age: <%= dog.age %></p>
-      <p> $ <%=  dog.price %>/day</p>
+      <div class="card-product-infos">
+        <%= link_to dog.name, dog_path(dog) %>
+        <p>Age: <%= dog.age %></p>
+        <p> $ <%=  dog.price %>/day</p>
+      </div>
     </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
 </div>
 
 <script>
