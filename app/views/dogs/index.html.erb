@@ -2,7 +2,7 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514984681892-8a5da9d7d6fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1977&q=80);">
+      <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523480717984-24cba35ae1ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
         <div class="homepage-card">
           <h1 class="text-left">Craving a companion?</h1>
           <%= link_to "Rent a Dog", "#all-dogs", class: "homepage-button align-item-left" %>
@@ -10,7 +10,7 @@
       </div>
       </div>
       <div class="carousel-item">
-        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440484433300-c3317c44152e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2023&q=80);">
+        <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1550227384-d7b148fb3f50?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80);">
           <div class="homepage-card">
             <h1 class="text-left">Preocupied with your job and your pup is left home alone?</h1>
             <div class="homepage-button align-item-left">
@@ -34,8 +34,10 @@
 <div class="search-form-container">
   <%= render 'search_dog' %>
 </div>
-
-<div>
+  <div class="arrow bounce">
+    <a class="fa fa-arrow-down fa-2x" href="#"></a>
+  </div>
+<div class="all-dogs-h1">
   <h1>All dogs</h1>
   <div class="d-flex flex-wrap mx-5 mb-5 px-5 d-inline-flex p-2">
     <% @dogs.each do |dog| %>
@@ -59,6 +61,3 @@
     priceNumber.insertAdjacentHTML("afterbegin", event.target.value);
   })
 </script>
-          <!-- <div class="arrow bounce">
-            <a class="fa fa-arrow-down fa-2x" href="#"></a>
-          </div> -->
