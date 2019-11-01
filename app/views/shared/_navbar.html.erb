@@ -11,7 +11,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <% if !@user.present? %>
+      <% if !user_signed_in? %>
         <li class="nav-item active">
           <%= link_to "Sign-up",  new_user_registration_path, class: "nav-link" %>
         </li>
@@ -22,8 +22,8 @@
         <li class="nav-item dropdown">
 
           <!-- <div class="p-2 bd-highlight text-center"> -->
-            <% if @user.image? %>
-              <%= image_tag @user.image, alt: "alttext", class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <% if current_user.image %>
+              <%= image_tag current_user.image, alt: "alttext", class: 'avatar dropdown-toggle', id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
             <% else %>
               <!-- <img class="avatar-large dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="avatar-large" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png"> -->
               <%= image_tag "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
