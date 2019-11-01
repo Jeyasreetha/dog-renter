@@ -5,7 +5,7 @@
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Breed</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <% Dog.all.pluck(:breed).each do |breed| %>
+        <% Dog.all.pluck(:breed).uniq.sort.each do |breed| %>
           <input class="checkbox" type="checkbox" name="breed[]" value="<%= breed %>" label="<%= breed %>"> <%= breed %> <br>
         <% end %>
       </div>
@@ -15,7 +15,7 @@
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Age</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <% Dog.all.pluck(:age).each do |age| %>
+          <% Dog.all.pluck(:age).uniq.sort.each do |age| %>
             <input class="checkbox" type="checkbox" name="age[]" value="<%= age %>" label="<%= age %>"> <%= age %> <br>
             <% end %>
         </div>

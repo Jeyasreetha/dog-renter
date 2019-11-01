@@ -2,7 +2,7 @@
   background-size: cover;
   background-position: center;
   padding: 0;
-  height: 700px;
+  height: 740px;
   display: flex;
   align-items: flex-start;
   position: relative;
@@ -29,17 +29,24 @@
 
 .arrow {
   text-align: center;
-  margin-top: 25px;
+  margin-top: -50px;
   z-index: 10;
-  color: white;
   position: relative;
   display: flex;
   justify-content: center;
+  a {
+    color: white;
+  }
 }
 .bounce {
   -moz-animation: bounce 2s infinite;
   -webkit-animation: bounce 2s infinite;
   animation: bounce 2s infinite;
+}
+
+.arrow a:hover {
+  opacity: .8;
+  text-decoration: none;
 }
 
 @keyframes bounce {
@@ -52,4 +59,8 @@
   60% {
     transform: translateY(-5px);
   }
+}
+
+.carousel {
+  margin-bottom: 40px;
 }
