@@ -3,11 +3,15 @@ class Renting < ApplicationRecord
   belongs_to :dog
   validates :total_price, :start, :end, presence: true
 
-  validate :check_start_date
+  validate :end_date_after_start_date
 
-  def check_start_date
-    if self.end < self.start
-      errors.add(:end, "Sorry, date is wrong")
+  private
+  def end_date_after_start_date
+    return if end.blank? || start.blank?
+
+    if end < start
+      errors.add(:end, "must be after the start date")
     end
   end
-end
+
+ end

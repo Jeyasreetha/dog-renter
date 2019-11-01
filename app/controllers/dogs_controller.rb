@@ -16,13 +16,13 @@ class DogsController < ApplicationController
     price = params[:price]
     location = params[:location]
     if breed && age && price
-      @dogs = Dog.where(breed: breed, age: age, price: price)
+      @dogs = Dog.where(breed: breed, age: age).filter { |dog| dog.price < price.to_i }
     elsif breed && age && !price
       @dogs = Dog.where(age: age, breed: breed)
     elsif breed && price && !age
-      @dogs = Dog.where(breed: breed, price: price)
+      @dogs = Dog.where(breed: breed).filter { |dog| dog.price < price.to_i }
     elsif price && age && !breed
-      @dogs = Dog.where(age: age, price: price)
+      @dogs = Dog.where(age: age).filter { |dog| dog.price < price.to_i }
     elsif price
       @dogs = Dog.where('price >= ? AND price <=?', @min, price)
     elsif breed

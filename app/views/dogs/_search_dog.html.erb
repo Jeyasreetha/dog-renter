@@ -26,11 +26,13 @@
       class: "form-control", placeholder: "Location"%>
     </div>
 
-    <div class="price-dropdown mr-3 d-flex align-items-center">
-        <label class="mb-0">Price:</label>
+
+    <div class="price-dropdown ml-3 d-flex align-items-center">
+        <h1 class="mb-0">Price:&nbsp;</h1>
+
         <%= @min %>
         <input type="range" class="custom-range" name="price" min="<%= @min %>" max="<%= @max %>" id="price-range">
-        <%= @max %>
+        <%#= @max %>
     <div class="d-flex justify-content-center" id="price-number">
     </div>
   </div>
@@ -38,6 +40,6 @@
 
   <div class="submit-buttons">
     <%= submit_tag "Search", class: "btn btn-primary" %>
-    <%= submit_tag "Reset", class: "button" %>
+    <%= link_to 'Reset', root_path, class: 'button'  %>
   </div>
 <% end %>
