@@ -24,9 +24,7 @@ class DogsController < ApplicationController
     elsif price && age && !breed
       @dogs = Dog.where(age: age, price: price)
     elsif price
-
-    @dogs = Dog.where('price >= ? AND price <=?', @min, price)
-
+      @dogs = Dog.where('price >= ? AND price <=?', @min, price)
     elsif breed
       @dogs = Dog.where(breed: breed)
     elsif age
@@ -36,7 +34,6 @@ class DogsController < ApplicationController
     else
       @dogs = Dog.all
     end
-
     # if params[:breed].present?
     #   @dogs = Dog.where(breed: params[:breed])
     # elsif params[:age].present?
@@ -57,16 +54,11 @@ class DogsController < ApplicationController
 
     # returns flats with coordinates
     @dogs = Dog.geocoded
-
-      @markers = @dogs.map do |dog|
-      {
-        lat: dog.latitude,
+    @markers = @dogs.map do |dog|
+      { lat: dog.latitude,
         lng: dog.longitude,
-        infoWindow: render_to_string(partial: "location", locals: { dog: dog })
-
-      }
-      end
-
+        infoWindow: render_to_string(partial: "location", locals: { dog: dog })}
+    end
   end
 
   def new
