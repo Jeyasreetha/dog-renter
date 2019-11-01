@@ -3,6 +3,7 @@ class DogsController < ApplicationController
   before_action :set_dog, only: [:show, :edit, :update, :destroy]
   # No need to be logged-in
   skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     # Read all dogs
     @dogs = Dog.all
@@ -15,7 +16,7 @@ class DogsController < ApplicationController
     elsif breed && age && !price
       @dogs = Dog.where(age: age, breed: breed)
     elsif breed && price && !age
-      @dogs = Dog.where(breed: breed,  price: price)
+      @dogs = Dog.where(breed: breed, price: price)
     elsif price && age && !breed
       @dogs = Dog.where(age: age, price: price)
     elsif price
@@ -37,6 +38,7 @@ class DogsController < ApplicationController
     #   @dogs = Dog.all
     # end
   end
+
   def show
     # Read one dog
     # @dog = Dog.find(params[:id])
@@ -44,12 +46,14 @@ class DogsController < ApplicationController
     authorize @dog
     @renting = Renting.new
   end
+
   def new
     # opens an empty form
     @dog = Dog.new
     # calls the dog_policy method new
     authorize @dog
   end
+
   def create
     # Create a new instance with params
     @dog = Dog.new(dog_params)
@@ -63,12 +67,14 @@ class DogsController < ApplicationController
       render 'new'
     end
   end
+
   def edit
     # calls the dog_policy method edit
     authorize @dog
     # renders a form already with info to change
     # @dog = Dog.find(params[:id])
   end
+
   def update
     # Get the dog you want to edit
     # @dog = Dog.find(params[:id])
@@ -78,6 +84,7 @@ class DogsController < ApplicationController
     # Go to the show page of the updated dog
     redirect_to dog_path(@dog)
   end
+
   def destroy
     authorize @dog
     # Get the dog you want to destroy
@@ -87,11 +94,14 @@ class DogsController < ApplicationController
     # Go to the user(owner) profile page(Dog listing)
     redirect_to dashboard_path
   end
+
   private
+
   def dog_params
     # white list
     params.require(:dog).permit(:name, :age, :breed, :location, :price, :image)
   end
+
   def set_dog
     @dog = Dog.find(params[:id])
   end
