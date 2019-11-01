@@ -6,28 +6,30 @@
       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Breed</button>
       <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
         <% Dog.all.pluck(:breed).each do |breed| %>
-          <input type="checkbox" name="breed[]" value="<%= breed %>" label="<%= breed %>"> <%= breed %> <br>
+          <input class="checkbox" type="checkbox" name="breed[]" value="<%= breed %>" label="<%= breed %>"> <%= breed %> <br>
         <% end %>
       </div>
     </div>
 
     <div class="age-dropdown mr-3">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">age</button>
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Age</button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
           <% Dog.all.pluck(:age).each do |age| %>
-            <input type="checkbox" name="age[]" value="<%= age %>" label="<%= age %>"> <%= age %> <br>
+            <input class="checkbox" type="checkbox" name="age[]" value="<%= age %>" label="<%= age %>"> <%= age %> <br>
             <% end %>
         </div>
     </div>
 
     <div class="location">
       <%= text_field_tag :location, params[:location],
-      class: "form-control", placeholder: "location"%>
+      class: "form-control", placeholder: "Location"%>
     </div>
+
 
     <div class="price-dropdown ml-3 d-flex align-items-center">
         <h1 class="mb-0">Price:&nbsp;</h1>
+
         <%= @min %>
         <input type="range" class="custom-range" name="price" min="<%= @min %>" max="<%= @max %>" id="price-range">
         <%#= @max %>
