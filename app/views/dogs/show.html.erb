@@ -1,26 +1,26 @@
-<div class = "container">
+<div class = "container mt-5">
+  <%= cl_image_tag @dog.image.url, height: 300, width: 400, crop: :fill %>
+  <h1><%= @dog.name %></h1>
+  <div class = "dog_card">
 
-<div class = "dog_card">
-  <%= image_tag "https://source.unsplash.com/collection/1270951/400x300"%>
-    <h1><%= @dog.name %></h1>
-      <li>Age: <%= @dog.age %></li>
-      <li>Breed: <%= @dog.breed %></li>
-      <li>Price: <%= @dog.price %></li>
-      <li>Location: <%= @dog.location %></li>
-      <li>Owner: <%= @dog.user.name %></li>
+    <li>Age: <%= @dog.age %></li>
+    <li>Breed: <%= @dog.breed %></li>
+    <li>Price: <%= @dog.price %></li>
+    <li>Location: <%= @dog.location %></li>
+    <li>Owner: <%= @dog.user.name %></li>
 
-      <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
-      <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
-</div>
+    <%= link_to "Edit this Dog", edit_dog_path(@dog), class: "btn btn-primary" %>
+    <%= link_to "Delete this Dog", dog_path(@dog), method: :delete, class: "btn btn-primary" %>
+  </div>
 
-<div class = "rent_dog">
+  <div class = "rent_dog">
 
-<%= simple_form_for [@dog, @renting] do |f| %>
-  <%= f.input :start %>
-  <%= f.input :end %>
-  <%= f.submit "Book this Dog", class: "btn btn-primary" %>
-<% end %>
-</div>
+    <%= simple_form_for [@dog, @renting] do |f| %>
+    <%= f.input :start %>
+    <%= f.input :end %>
+    <%= f.submit "Book this Dog", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 
 
 <div
@@ -32,5 +32,3 @@
 ></div>
 
 </div>
-
-
