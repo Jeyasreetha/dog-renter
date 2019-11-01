@@ -16,15 +16,19 @@
       </div>
   </div>
 
-  <div id='dog-booking-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>">
-    <% if current_user.id != @dog.user_id  %>
-       <%= simple_form_for([@dog, @renting]) do |f| %>
-           <%= f.input :start, as: :string, type: :text %>
-           <%= f.input :end, as: :string, type: :text %>
-           <%= f.submit "Book", class: "btn btn-primary" %>
-        <% end %>
+  <div id='dog-renting-dates' data-unavailable="<%= @dog.unavailable_dates.to_json %>">
+    <% if user_signed_in? %>
+      <% if current_user.id != @dog.user_id  %>
+         <%= simple_form_for([@dog, @renting]) do |f| %>
+             <%= f.input :start, as: :string, type: :text %>
+             <%= f.input :end, as: :string, type: :text %>
+             <%= f.submit "Book", class: "btn btn-primary" %>
+          <% end %>
+      <% end %>
     <% end %>
- </div>
+   </div>
+
+
 
   <h3>Map:</h3>
   <div

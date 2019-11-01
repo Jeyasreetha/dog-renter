@@ -6,12 +6,12 @@ class Renting < ApplicationRecord
   validate :end_date_after_start_date
 
   private
-  def end_date_after_start_date
-    return if end.blank? || start.blank?
 
-    if end < start
-      errors.add(:end, "must be after the start date")
+  def end_date_after_start_date
+    return if self.end.blank? || self.start.blank?
+
+    if self.end < self.start
+      errors.add(:end_date, "must be after the start date")
     end
   end
-
- end
+end
