@@ -7,6 +7,7 @@ class RentingsController < ApplicationController
     @renting.dog = @dog
     @renting.user = current_user
     @renting.total_price = (@renting.end - @renting.start) / 86_400 * @dog.price
+
     if @renting.save
       redirect_to dashboard_path
     else

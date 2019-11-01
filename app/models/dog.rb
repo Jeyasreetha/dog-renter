@@ -1,4 +1,5 @@
 class Dog < ApplicationRecord
+  has_many :rentings
   belongs_to :user
   validates :name, :age, :breed, :price, :location, presence: true
 
@@ -7,7 +8,7 @@ class Dog < ApplicationRecord
   mount_uploader :image, ImageUploader
 
   def unavailable_dates
-    bookings.pluck(:start, :end).map do |range|
+    rentings.pluck(:start, :end).map do |range|
       { from: range[0], to: range[1] }
     end
   end
