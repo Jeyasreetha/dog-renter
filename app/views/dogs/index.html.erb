@@ -2,12 +2,12 @@
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
+
           <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1514984681892-8a5da9d7d6fd?ixlib=rb-1.2.1&auto=format&fit=crop&w=1977&q=80);">
       <div class="homepage-card">
         <h1 class="text-left">Craving a companion?</h1>
           <%= link_to "Rent a Dog", "#all-dogs", class: "homepage-button align-item-left" %>
       </div>
-    </div>
     </div>
     <div class="carousel-item">
     <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.25),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1440484433300-c3317c44152e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2023&q=80);">
@@ -30,49 +30,10 @@
   </a>
 </div>
 
-<%= form_tag dogs_path, method: :get, class: 'search_tabs' do %>
-  <div class="tabs">
-    <div class="breed-dropdown mr-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Breed</button>
-      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-        <% Dog.all.pluck(:breed).each do |breed| %>
-          <input type="checkbox" name="breed[]" value="<%= breed %>" label="<%= breed %>"> <%= breed %> <br>
-        <% end %>
-      </div>
-    </div>
 
-    <div class="age-dropdown mr-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
-      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">age</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-          <% Dog.all.pluck(:age).each do |age| %>
-            <input type="checkbox" name="age[]" value="<%= age %>" label="<%= age %>"> <%= age %> <br>
-            <% end %>
-        </div>
-    </div>
-
-    <div class="location">
-      <%= text_field_tag :location, params[:location],
-      class: "form-control", placeholder: "location"%>
-    </div>
-
-    <div class="price-dropdown">
-      <div class="d-flex ">
-        <ul>price:</ul>
-        <%= @min %>
-        <input type="range" class="custom-range" name="price" min="<%= @min %>" max="<%= @max %>" id="price-range">
-        <%= @max %>
-      </div>
-     <div class="d-flex justify-content-center" id="price-number"> </div>
-  </div>
+<div class="search-form-container">
+  <%= render 'search_dog' %>
 </div>
-
-  <div class="submit-buttons">
-    <%= submit_tag "Search", class: "btn btn-primary" %>
-    <%= submit_tag "Reset", class: "btn btn-primary" %>
-  </div>
-<% end %>
 
 <div>
   <h1>All dogs</h1>

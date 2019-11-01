@@ -1,0 +1,43 @@
+<%= form_tag dogs_path, method: :get, class: 'search_tabs' do %>
+
+  <div class="d-flex">
+    <div class="breed-dropdown mr-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Breed</button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+        <% Dog.all.pluck(:breed).each do |breed| %>
+          <input type="checkbox" name="breed[]" value="<%= breed %>" label="<%= breed %>"> <%= breed %> <br>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="age-dropdown mr-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+      data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">age</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+          <% Dog.all.pluck(:age).each do |age| %>
+            <input type="checkbox" name="age[]" value="<%= age %>" label="<%= age %>"> <%= age %> <br>
+            <% end %>
+        </div>
+    </div>
+
+    <div class="location">
+      <%= text_field_tag :location, params[:location],
+      class: "form-control", placeholder: "location"%>
+    </div>
+
+    <div class="price-dropdown mr-3 d-flex align-items-center">
+        <label class="mb-0">price:</label>
+        <%= @min %>
+        <input type="range" class="custom-range" name="price" min="<%= @min %>" max="<%= @max %>" id="price-range">
+        <%= @max %>
+    <div class="d-flex justify-content-center" id="price-number">
+    </div>
+  </div>
+  </div>
+
+  <div class="submit-buttons">
+    <%= submit_tag "Search", class: "btn btn-primary" %>
+    <%= submit_tag "Reset", class: "button" %>
+  </div>
+<% end %>
